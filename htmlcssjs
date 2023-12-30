@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="refridgeration and air conditioning ">
+    <meta name="keywords" content="developer ,portfolio , html , css">
+    <meta name="author" content="brian">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+    </title>
+    <link rel="stylesheet" href="ht.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Blaka&family=Montserrat:wght@500&family=Oswald&family=Square+Peg&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/brands.min.css" integrity="sha512-OivR4OdSsE1onDm/i3J3Hpsm5GmOVvr9r49K3jJ0dnsxVzZgaOJ5MfxEAxCyGrzWozL9uJGKz6un3A7L+redIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/solid.min.css" integrity="sha512-qzgHTQ60z8RJitD5a28/c47in6WlHGuyRvMusdnuWWBB6fZ0DWG/KyfchGSBlLVeqAz+1LzNq+gGZkCSHnSd3g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+
+    <style>
+
+:root {
+    font-size: 16px;
+    font-family: 'Oswald', sans-serif;
+    --text-primary: #b6b6b6;
+    --text-secondary: #ffffff;
+    --bg-primary: #050507;
+    --bg-secondary: #141418;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: var(--bg-primary);
+    background-color: var(--text-secondary);
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: #23232e;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #6649b8;
+}
+
+.main {
+    margin-left: 5rem;
+    padding: 1rem;
+}
+
+.head {
+    width: 5rem;
+    height: 100vh;
+    position: fixed;
+    background-color: var(--bg-primary);
+    transition: width 200ms ease-out;
+}
+
+.navbar {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 100%;
+}
+
+.navitem {
+    width: 100%;
+}
+
+.navitem:last-child {
+    margin-top: auto;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    filter: grayscale(100%) opacity (0.7);
+    transition: width 2s, height 2s, transform ease-out;
+}
+
+.nav-link:hover {
+    filter: grayscale(0%) opacity(1);
+    background: var(--text-primary);
+    color: var(--text-secondary);
+}
+
+.head :hover {
+    filter: grayscale(0%) opacity(1);
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+}
+
+.wrapper {
+    display: inline-flex;
+}
+
+.wrapper .dynamic {
+    margin-left: 15px;
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+}
+
+.dynamic li {
+    list-style: none;
+    color: var(--bg-primary);
+    position: relative;
+    top: 0;
+    animation: slide 6s steps(4)infinite;
+}
+
+@keyframes slide {
+    100% {
+        top: -96px;
+    }
+}
+
+.dynamic li span {
+    position: relative;
+}
+
+.dynamic li span::after {
+    content: '';
+    position: absolute;
+    background: var(--text-secondary);
+    height: 100%;
+    width: 100%;
+    left: 0;
+    border-left: 2px solid var(--bg-secondary);
+    animation: typing 1.5s steps(16)infinite;
+}
+
+@keyframes typing {
+    100% {
+        left: 100%;
+        margin: 0 -35px 0 35px;
+    }
+}
+
+.link-text {
+    display: none;
+    margin-left: 1 rem;
+}
+
+.navbar:hover {
+    width: 7rem;
+}
+
+.navbar:hover .link-text {
+    display: block;
+}
+
+.logo {
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 1rem;
+    font-size: larger;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+}
+
+.home {
+    height: 100vh;
+    position: relative;
+    left: 50px;
+    letter-spacing: 0.5ch;
+    padding: 100px;
+    display: flex;
+}
+
+.home img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50px;
+    height: 500px;
+    position: relative;
+    text-align: center;
+}
+
+.home img::before {
+    content: '';
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    border-bottom: 10px solid var(--bg-primary);
+    border-top: 10px solid var(--bg-primary);
+    right: 10px;
+    bottom: -10px;
+}
+
+.aboutme {
+    height: 100vh;
+    position: relative;
+    left: 50px;
+    letter-spacing: 0.5ch;
+    padding: 100px;
+}
+
+.btn {
+    font: 20px;
+    font-weight: 450;
+    padding: 15px 30px;
+    border-radius: 40px;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    display: inline-block;
+    border: none;
+    background: var(--bg-primary);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.interests {
+    height: 100vh;
+    display: grid;
+    grid-gap: 2em;
+    padding-left: 100px;
+    grid-template-columns: repeat(2, minmax(350px, 1fr));
+}
+
+.sect {
+    padding: 2em;
+    border-radius: 2em;
+    box-shadow: 10px 10px 30px var(--text-primary);
+}
+
+.sect p {
+    margin-top: 0;
+    position: relative;
+}
+
+.interests img {
+    display: block;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.contactme {
+    height: 100vh;
+    padding: 100px;
+    display: grid;
+    place-items: center;
+    background: var(--text-secondary);
+}
+
+.contactme p {
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 0.5em;
+}
+
+.contactme section {
+    font-family: 'Anton', sans-serif;
+}
+
+.wrapp {
+    height: 50vh;
+}
+
+.button {
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+    background: var(--text-secondary);
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 10px 10px var(--bg-secondary);
+    display: inline-block;
+    line-height: 60px;
+    font-size: 50px;
+    margin: 10px;
+    text-decoration: none; 
+}
+
+.icon {
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    text-decoration: none; 
+}
+.button a {
+    text-decoration: none; /* Remove text decoration from the <a> tag */
+}
+
+
+
+.icon i {
+    font-size: 50px;
+    line-height: 60px;
+    position: relative;
+    border-radius: 10px;
+    
+   
+}
+
+.button span {
+    font-size: 20px;
+    text-align: center;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.button:hover {
+    width: 200px;
+}
+
+.button:nth-child(1):hover .icon {
+    background: rgb(252, 15, 192);
+}
+
+.button:nth-child(2):hover .icon {
+    background: rgba(11, 156, 49, 1);
+}
+
+.button:nth-child(3):hover .icon {
+    background: #04256d;
+}
+
+.button:nth-child(4):hover .icon {
+    background: #3d70dd;
+}
+
+.button:nth-child(5):hover .icon {
+    background: #00008d;
+}
+
+.contact {
+    height: 50vh;
+}
+
+.contact p {
+    margin-bottom: 20px;
+}
+
+.button2 {
+    background-color: var(--bg-primary);
+    color: var(--text-secondary);
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 13px 30px;
+    transition: 0.4s;
+    filter: grayscale(50%) opacity(0.5) brightness(0.95);
+    border-radius: 40px;
+    transition: width 2s height 2s transform ease-in-out;
+}
+
+.button2:hover {
+    filter: grayscale(0) opacity(1) brightness(1.25);
+}
+    </style>
+
+
+</head>
+
+<body>
+    <div id="page1">
+
+
+    <div class="content">
+        <nav class="head">
+            <ul class="navbar">
+
+                <li class="logo">
+                    <a href="#" class="nav-link">
+
+
+                        Brian
+                    </a>
+                </li>
+
+
+
+                <li class="nav-item">
+                    <a href="#page1" class="nav-link"> <i class="fa-solid fa-house-user"></i>
+                        <span class="link-text">home</span></a>
+                </li>
+                <li class="nav-item"></li>
+                <a href="#page2" class="nav-link"> <i class="fa-solid fa-address-card"></i>
+                    <span class="link-text">  about me</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#page3" class="nav-link"><i class="fa-regular fa-book"></i>
+                    <span class="link-text">interests </span> </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#page4" class="nav-link"> <i class="fa-solid fa-phone"></i>
+                        <span class="link-text">contact</span></a>
+                </li>
+            </ul>
+
+        </nav>
+        <div class="home">
+            <div>
+                <p>
+                    <h1> hello </h1><br>
+                    <div class="wrapper">
+                        <div class="static">i'm</div>
+                        <ul class="dynamic">
+                            <li><span>a web developer</span></li>
+                            <li><span>an app developer</span></li>
+                            <li><span>a designer</span></li>
+                            <li><span>brian onyiego</span></li>
+                        </ul>
+                    </div>
+                    <br> I design digital products and turn ideas<br> into a functional and delightful experience.<br> I’m focusing on working on interface and digital design<br> – mainly building and branding websites.</p>
+            </div>
+            <img src="brayo.jpg" alt="">
+        </div>
+    </div>
+</div>
+<div id="page2">
+    <div class="aboutme">
+        <h3> Developing And Web Design</h3>
+
+        <p>
+            we are front end developers that provide clean and perfect code and great pixel design for your website .<br>i also make websites more interactive and also web animations.<br> a smart ,clean and interactive website bolsters youe website access
+            to all users ,regardless of their device
+            <div class="btn">
+                lets talk
+            </div>
+
+        </p>
+
+
+
+
+    </div>
+</div>
+<div id="page3">
+    <div class="interests">
+        <div class="sect">
+
+
+            <p>ux/ui designing</p> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQVViIQfPTrzjIuwey1KZGA3obFoDD4JKgOA&usqp=CAU" alt="UX/UI Designing Image">
+        </div>
+
+        <div class=" sect">
+            <p> programming is my passion and i give my all</p> <img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS46S92Lu5pBnnwMOVTiBJMhW9VoVxzcqZ3lg&usqp=CAU" alt="">
+
+        </div>
+        <div class=" sect">
+            <p>this enables for transactions to occur in a network connected through peer-to-peer nodes. Typically, this storage is referred to as a 'digital ledger i tend to think blockchain is the future of currency.
+            </p> <img src="data:image/png;base64,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" alt="">
+        </div>
+        <div class=" sect">
+
+            <p> i do web development which is the skeleton of my skills, i offer high quality programming services at an affordable fee
+            </p> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuUXZ07XIXUsYK1dChTO-6Vmty9ACsfFJtyw&usqp=CAU" alt="">
+        </div>
+
+
+
+
+
+    </div>
+</div>
+
+<div id="page4">
+    <div class="contactme ">
+        <p> you can reach me through;</p>
+
+
+        <div class=" wrapp">
+            <div class="button">
+                <a href="https://www.instagram.com/ty_brv" target="_blank">
+                <div class="icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                </div>
+
+                <span>instagram</span>
+            </div>
+
+
+            <div class="button">
+                <a href="https://wa.me/254745925086"  target="_blank">
+                <div class="icon">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                </div>
+
+                <span>whatsapp</span>
+            </div>
+
+            <div class="button">
+                <a  href="https://twitter.com/prime_br7"  target="_blank">
+                <div class="icon">
+                    <i class="fab fa-twitter"></i></a>
+                </div>
+
+                <span>twitter</span>
+            </div>
+
+            <div class="button">
+                <a  href="https://www.linkedin.com/in/brian-john-197a28246/"  target="_blank">
+                <div class="icon">
+                    <i class="fab fa-linkedin"></i></a>
+                </div>
+
+                <span>linkedin</span>
+            </div>
+
+
+            <div class="button">
+                <a  href="https://web.facebook.com/brian.onyiego.94"  target="_blank">
+                <div class="icon">
+                    <i class="fab fa-facebook"></i></a>
+                </div>
+
+                <span>facebook</span>
+            </div>
+
+
+            <div class="button">
+                <a href="https://github.com/brianonyiego"  target="_blank">
+                <div class="icon">
+                    <i class="fab fa-github"></i></a>
+                </div>
+
+                <span>github</span>
+            </div>
+
+
+
+        </div>
+
+        <div class="contact">
+            <p> need a new website ?</p><a href="https://wa.me/25477549424"  target="_blank">
+            <button class=" button2">contact me</button></a>
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+    </div>
+
+
+
+</body>
+
+</html>
